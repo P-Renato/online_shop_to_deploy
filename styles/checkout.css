@@ -1,0 +1,283 @@
+:root {
+  --blueBackground: linear-gradient(45deg, rgba(55, 165, 255, 0.897), rgba(9, 0, 139, 0.726));
+  --productTitle: "Forum", serif; 
+  --categoryTitle: "Instrument Serif", serif;
+  --productDescription: "Fraunces", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.order-summary-box{
+    width: 30vw;
+    min-height: 30vh;
+    float: right;
+    position: fixed;
+    right: 4rem;
+}
+
+.itemsForPrices .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; /* spacing between lines */
+}
+
+.itemsForPrices p,
+.itemsForPrices span {
+  margin: 0;
+}
+
+.itemsForPrices{
+    margin-left: 1rem;
+    border: 3px solid rgba(55, 165, 255, 0.897);
+    border-radius: 20px;
+    max-height: 30vh;
+    width: 24rem;
+    padding: 3rem;
+}
+
+.itemsForPrices p {
+    margin-bottom: .3rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 3rem;
+    left: 2rem;
+}
+
+h2{
+    width: 100%;
+    text-align: start;
+    font-family: var(--productDescription);
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.productsAndSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+
+.checkout-box {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    grid-template-rows: .7fr .5fr .5fr .5fr;
+    border: 3px solid rgba(55, 165, 255, 0.897);
+    border-radius: 20px;
+    padding: 1rem;
+    /* margin-right: 3rem; */
+    margin-bottom: 3rem;
+    align-items: center;
+
+  }
+
+  .checkout-products {
+    width: 60rem;
+  }
+  
+  .product-checkout-image {
+    width: 10rem;
+    height: 16rem;
+    margin: .3rem;
+    padding: .3rem;
+    object-fit: contain;
+    border: 3px solid rgba(55, 165, 255, 0.897);
+    border-radius: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+ h3 {
+    margin: 0 0 0.5rem 0;
+    font-family: var(--categoryTitle);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .chooseDeliveryText{
+    text-align: center;
+    border: none;
+  }
+  .product-details .price,
+  .product-details .quantity {
+    margin: 0.2rem 0;
+  }
+
+  .price{
+    font-family: var(--productDescription);
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+  }
+  
+  .quantity-buttons{
+    font-family: var(--productDescription);
+    display: flex;
+    padding: .2rem;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+.delete-button{
+    border-radius: 20px;
+    border: 3px solid rgba(55, 165, 255, 0.897);
+    padding: .5rem;
+    background-color: white;
+    margin-right: 3rem;
+}
+  .delivery-options{
+    grid-column: 3 / 4;
+    grid-row: 2 / 5;
+    background: var(--blueBackground);
+    border: 2px solid black;
+    border-radius: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  .option{
+    display: flex;
+    margin: .5rem;
+    padding: .4rem;
+  }
+  .delivery-date{
+    margin-left: .5rem;
+  }
+
+  .header-delivery-date{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    font-family: var(--productTitle);
+  }
+.delivery-date h5,
+.delivery-date p{
+  margin: .4rem;
+}  
+
+
+.input-group{
+    position: relative;
+    margin: 1.1rem 0;
+}
+
+.modal{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formPanel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-modal{
+    display: none;
+}
+
+ .active{
+    display: block;
+}
+
+.form{
+    font-family: var(--productTitle);
+    width: 32rem;
+    height: 22rem;
+    border: 2px solid black;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--blueBackground);
+    border-radius: 5rem;
+    color: white;
+}
+
+.input-group label {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 1rem;
+    font-size: 1rem;
+    pointer-events: none;
+    color: rgb(218, 223, 223);
+    padding: 0 .3rem;
+    transition: .5s; 
+}
+
+
+.input-group input{
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+    border: 1.2px solid rgb(220, 223, 223);
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 .9rem;
+    height: 2rem;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    background: #010031;
+    font-size: .8rem;
+}
+
+.form span,
+.form span a {
+    color: rgb(218, 223, 223);
+    height: 2rem;
+    text-decoration: none;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 2rem;
+}
+
+.buttons button {
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+    border: 1.2px solid rgb(220, 223, 223);
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 .9rem;
+    height: 2rem;
+}
